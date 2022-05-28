@@ -5,6 +5,82 @@
 }
 
 body {
+    background-color: rebeccapurple;
     margin: 0;
     font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.content {
+    background-color: #F7F7F7;
+    width: 750px;
+    height: 750px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-progress{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-progress img {
+    width: 300px;
+    border: 1px solid red;
+}
+
+.game-progress h2 {
+    width: 300px;
+    text-align: center;
+    border: 1px solid red;
+}
+
+.word{
+    border: 1px solid red;
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.keyboard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 0.5rem;
+}
+
+.keyboard span {
+    border: 1px solid red;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.keyboard span p {
+    font-size: 2rem;
+}
+
+.keyboard-row-1,
+.keyboard-row-2,
+.keyboard-row-3{
+    display: flex;
+    column-gap: 0.5rem;
+}
+
+@media only screen and (max-width: 750px) {
+    .content {
+        background-color: #F7F7F7;
+        width: 100%;
+        height: 400px;
+    }
 }
