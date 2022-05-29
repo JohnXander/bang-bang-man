@@ -47,6 +47,18 @@ body {
     display: flex;
     justify-content: center;
     text-align: center;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.word p {
+    letter-spacing: 1.5rem;
+    padding-left: 1.5rem;
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
 }
 
 .keyboard{

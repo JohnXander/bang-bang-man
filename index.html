@@ -14,10 +14,10 @@
         <h1>Bang Bangman</h1>
         <div class="game-progress">
             <img src="img/bang-bang-7.png" alt="Bang Bang">
-            <h2>9 lives remaining</h2>
+            <h2 id="lives">9 lives remaining</h2>
         </div>
         <div class="word">
-            <h1>_ _ _ _ _ _ _ _ _ _</h1>
+            <p id="word">STRAWBERRY</p>
         </div>
         <div class="keyboard">
             <div class="keyboard-row-1">
@@ -34,7 +34,7 @@
             </div>
             <div class="keyboard-row-2">
                 <span><p>A</p></span>
-                <span><p>S</p></span>
+                <span onclick="findLetter('S')"><p>S</p></span>
                 <span><p>D</p></span>
                 <span><p>F</p></span>
                 <span><p>G</p></span>
@@ -48,10 +48,11 @@
                 <span><p>X</p></span>
                 <span><p>C</p></span>
                 <span><p>V</p></span>
-                <span><p>B</p></span>
+                <span onclick="findLetter('B')"><p>B</p></span>
                 <span><p>N</p></span>
                 <span><p>M</p></span>
             </div>
+            <button id="btn" onclick="addWord()">Play</button>
         </div>
     </div>
 </body>
