@@ -76,6 +76,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.keyboard span:hover {
+    box-shadow: none;
 }
 
 .keyboard span p {
