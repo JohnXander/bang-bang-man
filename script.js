@@ -57,7 +57,7 @@ const addWord = () => {
     bangPic.src = "img/bang-pic-9.jpg"
     lives.innerHTML = "9 lives remaining"
     finalWord = Array(currentWord.length).fill("_")
-    console.log(currentWord)
+    btn.classList.add("used")
 }
 
 const updateFinalWord = (letter, idx, double) => {
@@ -94,34 +94,38 @@ const makeKeyUsed = (letter) => {
     if(letter === "M") m.classList.add("used")
 }
 
+const makeAllKeysUsed = () => {
+    makeKeyUsed("A")
+    makeKeyUsed("B")
+    makeKeyUsed("C")
+    makeKeyUsed("D")
+    makeKeyUsed("E")
+    makeKeyUsed("F")
+    makeKeyUsed("G")
+    makeKeyUsed("H")
+    makeKeyUsed("I")
+    makeKeyUsed("J")
+    makeKeyUsed("K")
+    makeKeyUsed("L")
+    makeKeyUsed("M")
+    makeKeyUsed("N")
+    makeKeyUsed("O")
+    makeKeyUsed("P")
+    makeKeyUsed("Q")
+    makeKeyUsed("R")
+    makeKeyUsed("S")
+    makeKeyUsed("T")
+    makeKeyUsed("U")
+    makeKeyUsed("V")
+    makeKeyUsed("W")
+    makeKeyUsed("X")
+    makeKeyUsed("Y")
+    makeKeyUsed("Z")
+}
+
 const endGame = () => {
     if (currentWord === finalStringWord) {
-        makeKeyUsed("A")
-        makeKeyUsed("B")
-        makeKeyUsed("C")
-        makeKeyUsed("D")
-        makeKeyUsed("E")
-        makeKeyUsed("F")
-        makeKeyUsed("G")
-        makeKeyUsed("H")
-        makeKeyUsed("I")
-        makeKeyUsed("J")
-        makeKeyUsed("K")
-        makeKeyUsed("L")
-        makeKeyUsed("M")
-        makeKeyUsed("N")
-        makeKeyUsed("O")
-        makeKeyUsed("P")
-        makeKeyUsed("Q")
-        makeKeyUsed("R")
-        makeKeyUsed("S")
-        makeKeyUsed("T")
-        makeKeyUsed("U")
-        makeKeyUsed("V")
-        makeKeyUsed("W")
-        makeKeyUsed("X")
-        makeKeyUsed("Y")
-        makeKeyUsed("Z")
+        makeAllKeysUsed()
         lives.innerHTML = "Well done!" + "🔥"
     }
 }
@@ -151,6 +155,9 @@ const findLetter = (letter) => {
         if (livesRemaining <= 0) {
             lives.innerHTML = "Game over!" + "😭"
             bangPic.src = "img/bang-pic-0.jpg"
+            makeAllKeysUsed()
+            word.innerHTML = currentWord
+            word.classList.add("used")
         } else if (livesRemaining === 1) {
             lives.innerHTML = `${livesRemaining} life remaining` 
         } else {
@@ -160,8 +167,4 @@ const findLetter = (letter) => {
 
     endGame()
 
-
 }
-
-
-
