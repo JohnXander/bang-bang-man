@@ -47,6 +47,7 @@ let currentWord
 let hiddenWord 
 let livesRemaining = 9
 let finalWord
+let finalStringWord
 
 const addWord = () => {
     const randomIdx = Math.floor(Math.random() * wordList.length)
@@ -93,9 +94,40 @@ const makeKeyUsed = (letter) => {
     if(letter === "M") m.classList.add("used")
 }
 
+const endGame = () => {
+    if (currentWord === finalStringWord) {
+        makeKeyUsed("A")
+        makeKeyUsed("B")
+        makeKeyUsed("C")
+        makeKeyUsed("D")
+        makeKeyUsed("E")
+        makeKeyUsed("F")
+        makeKeyUsed("G")
+        makeKeyUsed("H")
+        makeKeyUsed("I")
+        makeKeyUsed("J")
+        makeKeyUsed("K")
+        makeKeyUsed("L")
+        makeKeyUsed("M")
+        makeKeyUsed("N")
+        makeKeyUsed("O")
+        makeKeyUsed("P")
+        makeKeyUsed("Q")
+        makeKeyUsed("R")
+        makeKeyUsed("S")
+        makeKeyUsed("T")
+        makeKeyUsed("U")
+        makeKeyUsed("V")
+        makeKeyUsed("W")
+        makeKeyUsed("X")
+        makeKeyUsed("Y")
+        makeKeyUsed("Z")
+        lives.innerHTML = "Well done!" + "🔥"
+    }
+}
+
 const findLetter = (letter) => {
     const currWordArr = currentWord.split("")
-    hiddenWord = "_".repeat(currentWord.length)
     let idx, double
 
     makeKeyUsed(letter)
@@ -108,14 +140,16 @@ const findLetter = (letter) => {
         if (index === idx) updateFinalWord(letter, idx, double)
     })
 
+    finalStringWord = finalWord.join("")
+
     if (idx !== undefined) {
-        word.innerHTML = finalWord.join("")
+        word.innerHTML = finalStringWord
     } else {
         livesRemaining -= 1
         bangPic.src = `img/bang-pic-${livesRemaining}.jpg`
 
         if (livesRemaining <= 0) {
-            lives.innerHTML = "Game over!"
+            lives.innerHTML = "Game over!" + "😭"
             bangPic.src = "img/bang-pic-0.jpg"
         } else if (livesRemaining === 1) {
             lives.innerHTML = `${livesRemaining} life remaining` 
@@ -123,6 +157,9 @@ const findLetter = (letter) => {
             lives.innerHTML = `${livesRemaining} lives remaining`
         }
     }
+
+    endGame()
+
 
 }
 

@@ -2,10 +2,11 @@
 
 * {
     box-sizing: border-box;
+    user-select: none;
 }
 
 body {
-    background-color: rebeccapurple;
+    background-color: #555;
     margin: 0;
     font-family: 'Poppins', sans-serif;
     display: flex;
@@ -17,11 +18,13 @@ body {
 .content {
     background-color: #F7F7F7;
     width: 750px;
-    height: 750px;
+    padding: 1rem 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
 }
 
 .game-progress{
@@ -30,6 +33,8 @@ body {
     align-items: center;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
     padding: 2rem;
+    border-radius: 5px;
+    margin-top: 1rem;
 }
 
 .game-progress img {
@@ -51,6 +56,8 @@ body {
     justify-content: center;
     align-items: center;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+
 }
 
 .word p {
@@ -59,6 +66,7 @@ body {
     font-size: 3rem;
     font-weight: bold;
     margin: 0;
+
 }
 
 .keyboard{
@@ -77,6 +85,7 @@ body {
     align-items: center;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
     cursor: pointer;
+    border-radius: 5px;
 }
 
 .keyboard span.used {
@@ -98,6 +107,23 @@ body {
 .keyboard-row-3{
     display: flex;
     column-gap: 0.5rem;
+}
+
+.keyboard button {
+    border: none;
+    padding: 1rem 5rem;
+    background-color: #000;
+    color: #fff;
+    font-family: inherit;
+    font-size: 1.5rem;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 1rem 0;
+}
+
+.keyboard button:hover {
+    box-shadow: none;
 }
 
 @media only screen and (max-width: 750px) {
